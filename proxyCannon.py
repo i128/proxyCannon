@@ -563,7 +563,7 @@ debug('Security Group Name: ' + securityGroup)
 
 # Start controller
 try:
-  res_mgmt = conn.run_instances(args.image_id, key_name=keyName, min_count='1', max_count='1', instance_type=image_type, security_groups=[securityGroup])
+  res_mgmt = conn.run_instances(args.image_id, key_name=keyName, min_count='1', max_count='1', instance_type=args.image_type, security_groups=[securityGroup])
 except Exception as e:
   error("Failed to start new instance: %s" % e)
   cleanup('null', 'null')
